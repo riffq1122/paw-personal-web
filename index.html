@@ -448,8 +448,8 @@
                             <p>Repositori terhubung ke <code>riffq1122/paw-personal-web</code> dengan riwayat minimal 5 commit terstruktur, lebih dari 2 branch fitur, proses merge ke branch <code>main</code>, simulasi penyelesaian merge conflict, serta branch khusus untuk Pull Request.</p>
                         </li>
                         <li class="spec-item">
-                            <h4>3. Pengelolaan Paket npm dan Vite</h4>
-                            <p>Proyek dibangun memakai bundler Vite dengan pengelolaan paket melalui <code>npm</code>, pemisahan <code>dependencies</code> vs <code>devDependencies</code>, standar semantic versioning, serta script <code>dev</code>, <code>build</code>, dan <code>preview</code> di <code>package.json</code>.</p>
+                            <h4>3. Pengelolaan Paket npm, Vite &amp; Peran Compiler/Transpiler/Bundler</h4>
+                            <p>Proyek dikelola dengan <code>npm</code> (<code>dependencies</code> vs <code>devDependencies</code>, semantic versioning, script <code>dev</code>, <code>build</code>, <code>preview</code>). Saat build, <strong>Compiler</strong> (<code>tsc</code>) memeriksa validitas tipe statis, <strong>Transpiler</strong> mengubah kode TypeScript menjadi JavaScript yang dipahami browser, dan <strong>Bundler</strong> (Vite) menggabungkan serta mengoptimalkan modul HTML, CSS, JS, dan aset ke folder <code>dist/</code>.</p>
                         </li>
                         <li class="spec-item">
                             <h4>4. Implementasi TypeScript</h4>

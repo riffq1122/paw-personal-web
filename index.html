@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rifqy Muhamad Ibrahim | Profil, Jadwal &amp; Portal Tugas Kuliah</title>
+
+    <meta name="description" content="Halaman profil pribadi, tabel mata kuliah semester 5, dan portal tugas kuliah milik Rifqy Muhamad Ibrahim, mahasiswa Teknik Informatika UIN Sunan Gunung Djati Bandung.">
+    <meta property="og:title" content="Rifqy Muhamad Ibrahim - Personal Website">
+    <meta property="og:description" content="Profil pribadi, jadwal mata kuliah semester 5, dan portal tugas kuliah Teknik Informatika.">
+
+    <link rel="stylesheet" href="/src/style.css">
+    <script type="module" src="/src/main.ts"></script>
+</head>
+<body>
+    <a class="skip-link" href="#konten-utama">Langsung ke konten utama</a>
+
+    <header class="site-header">
+        <div class="header-topbar">
+            <p class="header-meta">Portofolio Akademik &amp; Portal Tugas &middot; Semester 5</p>
+            <div class="header-controls">
+                <a href="#kontak" class="topbar-link">Kontak</a>
+                <button type="button" id="theme-toggle" class="theme-toggle" aria-pressed="false" aria-label="Ganti ke mode gelap">
+                    <span class="theme-toggle-indicator" aria-hidden="true"></span>
+                    <span id="theme-toggle-text">Mode Gelap</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="header-hero">
+            <p class="greeting">Halo, saya</p>
+            <h1>Rifqy Muhamad Ibrahim</h1>
+            <p class="hero-lead">Halaman profil akademik, jadwal mata kuliah semester 5, dan portal pengelolaan tugas kuliah di Teknik Informatika UIN Sunan Gunung Djati Bandung.</p>
+        </div>
+
+        <nav class="tabs-nav" aria-label="Navigasi tab halaman utama">
+            <div class="tabs-bar" role="tablist" aria-label="Bagian utama website">
+                <button
+                    type="button"
+                    role="tab"
+                    id="tab-profil"
+                    class="tab-btn is-active"
+                    aria-selected="true"
+                    aria-controls="panel-profil"
+                    tabindex="0"
+                    data-tab="profil">
+                    01 / Profil &amp; Beranda
+                </button>
+                <button
+                    type="button"
+                    role="tab"
+                    id="tab-jadwal"
+                    class="tab-btn"
+                    aria-selected="false"
+                    aria-controls="panel-jadwal"
+                    tabindex="-1"
+                    data-tab="jadwal">
+                    02 / Tabel Mata Kuliah
+                </button>
+                <button
+                    type="button"
+                    role="tab"
+                    id="tab-tugas"
+                    class="tab-btn"
+                    aria-selected="false"
+                    aria-controls="panel-tugas"
+                    tabindex="-1"
+                    data-tab="tugas">
+                    03 / Portal Tugas Kuliah
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="konten-utama" tabindex="-1">
+        <div role="tabpanel" id="panel-profil" aria-labelledby="tab-profil">
+            <section id="tentang-saya" class="section-block" aria-labelledby="heading-tentang">
+                <div class="section-header">
+                    <span class="section-index">01 / PROFIL</span>
+                    <h2 id="heading-tentang">Tentang Saya</h2>
+                </div>
+
+                <div class="profile-layout">
+                    <figure class="profile-figure">
+                        <img class="fit-picture"
+                            src="/aset/my.jpg"
+                            alt="Foto profil Rifqy Muhamad Ibrahim"
+                            width="200"
+                            height="200"
+                            fetchpriority="high">
+                        <figcaption class="profile-caption">Mahasiswa Teknik Informatika &middot; Semester 5</figcaption>
+                    </figure>
+
+                    <div class="profile-content">
+                        <h3>Biodata Singkat</h3>
+                        <p class="profile-bio">Perkenalkan nama saya Rifqy Muhamad Ibrahim. Saya adalah seorang mahasiswa Teknik Informatika semester 5 yang sedang menempuh pendidikan di UIN Sunan Gunung Djati Bandung. Saya memiliki ketertarikan pada bidang data seperti data engineering, data science, dan data analysis.</p>
+
+                        <dl class="profile-details">
+                            <div class="detail-item">
+                                <dt>Institusi</dt>
+                                <dd>UIN Sunan Gunung Djati Bandung</dd>
+                            </div>
+                            <div class="detail-item">
+                                <dt>Program Studi</dt>
+                                <dd>Teknik Informatika (Semester 5)</dd>
+                            </div>
+                            <div class="detail-item">
+                                <dt>Fokus Minat</dt>
+                                <dd>Data Engineering, Data Science, Data Analysis</dd>
+                            </div>
+                        </dl>
+
+                        <div class="profile-actions">
+                            <button type="button" class="btn-primary" data-goto-tab="jadwal">Lihat Tabel Mata Kuliah (23 SKS)</button>
+                            <button type="button" class="btn-secondary" data-goto-tab="tugas">Buka Portal Tugas Kuliah</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div role="tabpanel" id="panel-jadwal" aria-labelledby="tab-jadwal" hidden>
+            <section id="mata-kuliah" class="section-block" aria-labelledby="heading-mk">
+                <div class="section-header">
+                    <span class="section-index">02 / KURIKULUM</span>
+                    <div class="section-title-group">
+                        <h2 id="heading-mk">Tabel Mata Kuliah</h2>
+                        <p class="section-subtitle">Daftar rencana studi aktif beserta alokasi ruang, waktu perkuliahan, dan dosen pengampu.</p>
+                    </div>
+                </div>
+
+                <div class="schedule-toolbar" role="region" aria-label="Filter jadwal mata kuliah">
+                    <div class="filter-search">
+                        <label for="cari-mk" class="search-label">Cari mata kuliah, dosen, atau ruang</label>
+                        <div class="search-input-wrap">
+                            <input
+                                type="search"
+                                id="cari-mk"
+                                class="search-input"
+                                placeholder="Contoh: Basis Data, R.4.12, atau Jumadi"
+                                autocomplete="off">
+                            <button type="button" id="clear-search" class="btn-secondary" hidden>Hapus filter</button>
+                        </div>
+                    </div>
+
+                    <div class="filter-days-group">
+                        <span class="filter-group-label" id="label-filter-hari">Filter hari perkuliahan</span>
+                        <div class="day-pills" role="group" aria-labelledby="label-filter-hari">
+                            <button type="button" class="day-pill is-active" data-day="all" aria-pressed="true">Semua (8)</button>
+                            <button type="button" class="day-pill" data-day="Senin" aria-pressed="false">Senin (3)</button>
+                            <button type="button" class="day-pill" data-day="Selasa" aria-pressed="false">Selasa (1)</button>
+                            <button type="button" class="day-pill" data-day="Rabu" aria-pressed="false">Rabu (1)</button>
+                            <button type="button" class="day-pill" data-day="Kamis" aria-pressed="false">Kamis (1)</button>
+                            <button type="button" class="day-pill" data-day="Jumat" aria-pressed="false">Jumat (2)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="state-loading" class="schedule-state" role="status" aria-live="polite" hidden>
+                    <p class="state-title">Memperbarui daftar mata kuliah...</p>
+                    <p class="state-desc">Mohon tunggu sebentar sementara jadwal disaring.</p>
+                </div>
+
+                <div id="state-error" class="schedule-state schedule-state-error" role="alert" hidden>
+                    <p class="state-title">Gagal memuat tampilan jadwal</p>
+                    <p class="state-desc" id="state-error-message">Terjadi kendala saat memproses filter jadwal mata kuliah.</p>
+                    <button type="button" id="retry-schedule" class="btn-primary">Muat ulang seluruh jadwal</button>
+                </div>
+
+                <div id="state-empty" class="schedule-state" role="status" aria-live="polite" hidden>
+                    <p class="state-title">Tidak ada mata kuliah yang cocok</p>
+                    <p class="state-desc" id="state-empty-message">Pencarian atau filter hari yang dipilih tidak menemukan jadwal yang sesuai.</p>
+                    <button type="button" id="reset-filter" class="btn-primary">Tampilkan semua mata kuliah (8)</button>
+                </div>
+
+                <div class="table-container" id="table-wrapper">
+                    <table class="table" id="tabel-jadwal">
+                        <thead>
+                            <tr>
+                                <th rowspan="2" scope="col" class="col-no">No</th>
+                                <th rowspan="2" scope="col" class="col-mk">Mata Kuliah</th>
+                                <th rowspan="2" scope="col" class="col-center">Kelas</th>
+                                <th rowspan="2" scope="col" class="col-num">SKS</th>
+                                <th rowspan="2" scope="col" class="col-num">SMT</th>
+                                <th colspan="3" scope="colgroup" class="col-group-header">Jadwal</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">Ruang</th>
+                                <th scope="col">Waktu</th>
+                                <th scope="col">Dosen</th>
+                            </tr>
+                        </thead>
+                        <tbody id="jadwal-tbody">
+                            <tr data-day="Senin" data-sks="2">
+                                <td data-label="No" class="cell-mono">1</td>
+                                <td data-label="Mata Kuliah" class="cell-mk">
+                                    <span class="mk-code">20100470503006</span>
+                                    <span class="mk-name">Kewirausahaan &amp; Etika Bisnis</span>
+                                </td>
+                                <td data-label="Kelas" class="cell-center">D</td>
+                                <td data-label="SKS" class="cell-num">2</td>
+                                <td data-label="SMT" class="cell-num">7</td>
+                                <td data-label="Ruang" class="cell-mono">R.4.12</td>
+                                <td data-label="Waktu" class="cell-mono">Senin 08:40:00-10:20:00</td>
+                                <td data-label="Dosen">Adam Faroqi ST., MT.</td>
+                            </tr>
+                            <tr data-day="Senin" data-sks="3">
+                                <td data-label="No" class="cell-mono">2</td>
+                                <td data-label="Mata Kuliah" class="cell-mk">
+                                    <span class="mk-code">20100470501024</span>
+                                    <span class="mk-name">Manajemen Basis Data</span>
+                                </td>
+                                <td data-label="Kelas" class="cell-center">D</td>
+                                <td data-label="SKS" class="cell-num">3</td>
+                                <td data-label="SMT" class="cell-num">5</td>
+                                <td data-label="Ruang" class="cell-mono">R.4.12</td>
+                                <td data-label="Waktu" class="cell-mono">Senin 12:40:00-15:10:00</td>
+                                <td data-label="Dosen">Wildan Budiawan Zulfikar S.T., M.Kom.</td>
+                            </tr>
+                            <tr data-day="Senin" data-sks="3">
+                                <td data-label="No" class="cell-mono">3</td>
+                                <td data-label="Mata Kuliah" class="cell-mk">
+                                    <span class="mk-code">20100470501034</span>
+                                    <span class="mk-name">Manajemen Proyek Perangkat Lunak</span>
+                                </td>
+                                <td data-label="Kelas" class="cell-center">D</td>
+                                <td data-label="SKS" class="cell-num">3</td>
+                                <td data-label="SMT" class="cell-num">5</td>
+                                <td data-label="Ruang" class="cell-mono">R.4.01</td>
+                                <td data-label="Waktu" class="cell-mono">Senin 15:30:00-18:00:00</td>
+                                <td data-label="Dosen">Agung Wahana S.E., M.T.</td>
+                            </tr>
+                            <tr data-day="Selasa" data-sks="3">
+                                <td data-label="No" class="cell-mono">4</td>
+                                <td data-label="Mata Kuliah" class="cell-mk">
+                                    <span class="mk-code">20100470501028</span>
+                                    <span class="mk-name">Pengembangan Aplikasi Mobile</span>
+                                </td>
+                                <td data-label="Kelas" class="cell-center">D</td>
+                                <td data-label="SKS" class="cell-num">3</td>
+                                <td data-label="SMT" class="cell-num">5</td>
+                                <td data-label="Ruang" class="cell-mono">R.4.01</td>
+                                <td data-label="Waktu" class="cell-mono">Selasa 15:30:00-18:00:00</td>
+                                <td data-label="Dosen">H. Aldy Rialdy Atmadja M.T</td>
+                            </tr>
+                            <tr data-day="Rabu" data-sks="3">
+                                <td data-label="No" class="cell-mono">5</td>
+                                <td data-label="Mata Kuliah" class="cell-mk">
+                                    <span class="mk-code">20100470501026</span>
+                                    <span class="mk-name">Jaringan Komputer</span>
+                                </td>
+                                <td data-label="Kelas" class="cell-center">A</td>
+                                <td data-label="SKS" class="cell-num">3</td>
+                                <td data-label="SMT" class="cell-num">5</td>
+                                <td data-label="Ruang" class="cell-mono">R.4.11</td>
+                                <td data-label="Waktu" class="cell-mono">Rabu 09:30:00-12:00:00</td>
+                                <td data-label="Dosen">Cecep Nurul Alam M.T.</td>
+                            </tr>
+                            <tr data-day="Kamis" data-sks="3">
+                                <td data-label="No" class="cell-mono">6</td>
+                                <td data-label="Mata Kuliah" class="cell-mk">
+                                    <span class="mk-code">20100470501032</span>
+                                    <span class="mk-name">Interaksi Manusia dan Komputer</span>
+                                </td>
+                                <td data-label="Kelas" class="cell-center">D</td>
+                                <td data-label="SKS" class="cell-num">3</td>
+                                <td data-label="SMT" class="cell-num">5</td>
+                                <td data-label="Ruang" class="cell-mono">R.4.01</td>
+                                <td data-label="Waktu" class="cell-mono">Kamis 07:00:00-09:30:00</td>
+                                <td data-label="Dosen">Dr. Cepy Slamet S.T., M.Kom.</td>
+                            </tr>
+                            <tr data-day="Jumat" data-sks="3">
+                                <td data-label="No" class="cell-mono">7</td>
+                                <td data-label="Mata Kuliah" class="cell-mk">
+                                    <span class="mk-code">20100470501030</span>
+                                    <span class="mk-name">Pengembangan Aplikasi Web</span>
+                                </td>
+                                <td data-label="Kelas" class="cell-center">D</td>
+                                <td data-label="SKS" class="cell-num">3</td>
+                                <td data-label="SMT" class="cell-num">5</td>
+                                <td data-label="Ruang" class="cell-mono">Gedung R.3.9</td>
+                                <td data-label="Waktu" class="cell-mono">Jumat 07:00:00-09:30:00</td>
+                                <td data-label="Dosen">Muhammad Deden Firdaus ST, M.Kom</td>
+                            </tr>
+                            <tr data-day="Jumat" data-sks="3">
+                                <td data-label="No" class="cell-mono">8</td>
+                                <td data-label="Mata Kuliah" class="cell-mk">
+                                    <span class="mk-code">20100470501033</span>
+                                    <span class="mk-name">Intelegensia Buatan</span>
+                                </td>
+                                <td data-label="Kelas" class="cell-center">D</td>
+                                <td data-label="SKS" class="cell-num">3</td>
+                                <td data-label="SMT" class="cell-num">5</td>
+                                <td data-label="Ruang" class="cell-mono">R.4.12</td>
+                                <td data-label="Waktu" class="cell-mono">Jumat 12:40:00-15:10:00</td>
+                                <td data-label="Dosen">Jumadi ST., M.Cs.</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th colspan="3" scope="row" id="label-jumlah-sks">JUMLAH SKS</th>
+                                <th class="cell-num" id="total-sks">23</th>
+                                <th colspan="4" class="tfoot-note" id="summary-mk">Menampilkan 8 dari 8 mata kuliah</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+        <div role="tabpanel" id="panel-tugas" aria-labelledby="tab-tugas" hidden>
+            <section id="portal-tugas" class="section-block" aria-labelledby="heading-tugas">
+                <div class="section-header">
+                    <span class="section-index">03 / PORTAL TUGAS</span>
+                    <div class="section-title-group">
+                        <h2 id="heading-tugas">Portal Tugas Kuliah</h2>
+                        <p class="section-subtitle">Aplikasi pengelolaan daftar tugas kuliah dengan operasi tambah, ubah, hapus, dan pelacakan status pengerjaan.</p>
+                    </div>
+                </div>
+
+                <div class="env-banner" role="region" aria-label="Konfigurasi Environment Aplikasi">
+                    <div class="env-meta-row">
+                        <span class="env-meta-item">
+                            <span class="env-key">VITE_APP_NAME:</span>
+                            <strong id="env-app-name">Portal Tugas Kuliah</strong>
+                        </span>
+                        <span class="env-meta-item">
+                            <span class="env-key">VITE_APP_VERSION:</span>
+                            <code id="env-app-version">v1.0.0</code>
+                        </span>
+                    </div>
+                    <p class="env-security-note">Konfigurasi publik dibaca dari berkas <code>.env</code> dengan tipe aman <code>ImportMetaEnv</code>. Password dan API key rahasia tidak pernah ditampilkan di sisi klien dan berkas <code>.env</code> dikecualikan oleh <code>.gitignore</code>.</p>
+                </div>
+
+                <div class="tasks-workspace">
+                    <form id="form-tugas" class="task-form" novalidate>
+                        <h3 id="form-tugas-heading">Tambah Tugas Kuliah Baru</h3>
+                        <input type="hidden" id="tugas-id" value="">
+
+                        <div class="field-group">
+                            <label for="tugas-judul" class="field-label">Judul Tugas</label>
+                            <input
+                                type="text"
+                                id="tugas-judul"
+                                class="field-input"
+                                required
+                                placeholder="Contoh: Implementasi CRUD TypeScript"
+                                aria-describedby="tugas-judul-error">
+                            <p id="tugas-judul-error" class="field-error" role="alert" hidden>Perhatian: Judul tugas wajib diisi (minimal 3 karakter).</p>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="tugas-mk" class="field-label">Mata Kuliah</label>
+                            <select id="tugas-mk" class="field-input"></select>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="tugas-deadline" class="field-label">Tenggat Waktu</label>
+                            <input
+                                type="date"
+                                id="tugas-deadline"
+                                class="field-input"
+                                required
+                                aria-describedby="tugas-deadline-error">
+                            <p id="tugas-deadline-error" class="field-error" role="alert" hidden>Perhatian: Tanggal tenggat waktu wajib dipilih.</p>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="tugas-status" class="field-label">Status Pengerjaan</label>
+                            <select id="tugas-status" class="field-input">
+                                <option value="Belum Selesai">Belum Selesai</option>
+                                <option value="Selesai">Selesai</option>
+                            </select>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" id="btn-simpan-tugas" class="btn-primary">Tambah Tugas</button>
+                            <button type="button" id="btn-batal-edit" class="btn-secondary" hidden>Batal Edit</button>
+                        </div>
+                    </form>
+
+                    <div class="tasks-list-panel">
+                        <div class="tasks-summary-bar" aria-label="Ringkasan jumlah tugas">
+                            <span class="summary-stat" id="task-summary-total">Total: 0 tugas</span>
+                            <span class="summary-stat" id="task-summary-pending">Belum Selesai: 0</span>
+                            <span class="summary-stat" id="task-summary-done">Selesai: 0</span>
+                        </div>
+
+                        <div class="tasks-toolbar" role="region" aria-label="Filter daftar tugas">
+                            <div class="filter-search">
+                                <label for="cari-tugas" class="search-label">Cari tugas</label>
+                                <div class="search-input-wrap">
+                                    <input
+                                        type="search"
+                                        id="cari-tugas"
+                                        class="search-input"
+                                        placeholder="Cari judul atau mata kuliah..."
+                                        autocomplete="off">
+                                    <button type="button" id="clear-cari-tugas" class="btn-secondary" hidden>Hapus</button>
+                                </div>
+                            </div>
+
+                            <div class="filter-days-group">
+                                <span class="filter-group-label" id="label-filter-status">Filter status tugas</span>
+                                <div class="day-pills" role="group" aria-labelledby="label-filter-status">
+                                    <button type="button" class="task-filter-pill is-active" data-status-filter="Semua" aria-pressed="true">Semua</button>
+                                    <button type="button" class="task-filter-pill" data-status-filter="Belum Selesai" aria-pressed="false">Belum Selesai</button>
+                                    <button type="button" class="task-filter-pill" data-status-filter="Selesai" aria-pressed="false">Selesai</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="task-live-announcer" class="task-feedback" aria-live="polite" aria-atomic="true" hidden></div>
+
+                        <div id="tugas-state-loading" class="schedule-state" role="status" aria-live="polite" hidden>
+                            <p class="state-title">Memuat daftar tugas...</p>
+                            <p class="state-desc">Mohon tunggu sementara daftar tugas sedang disiapkan.</p>
+                        </div>
+
+                        <div id="tugas-state-error" class="schedule-state schedule-state-error" role="alert" hidden>
+                            <p class="state-title">Perhatian: Gagal memproses daftar tugas</p>
+                            <p class="state-desc" id="tugas-error-message">Terjadi kendala saat membaca atau menyimpan data tugas kuliah.</p>
+                            <button type="button" id="retry-tugas" class="btn-primary">Muat ulang daftar tugas awal</button>
+                        </div>
+
+                        <div id="tugas-state-empty" class="schedule-state" role="status" aria-live="polite" hidden>
+                            <p class="state-title">Belum ada tugas yang ditampilkan</p>
+                            <p class="state-desc" id="tugas-empty-message">Tidak ada tugas yang cocok dengan filter saat ini atau seluruh tugas telah dihapus.</p>
+                            <button type="button" id="reset-filter-tugas" class="btn-primary">Tampilkan semua tugas</button>
+                        </div>
+
+                        <ul id="daftar-tugas" class="task-list" aria-live="polite"></ul>
+                    </div>
+                </div>
+
+                <section class="spec-ledger" aria-labelledby="heading-spesifikasi">
+                    <div class="spec-ledger-header">
+                        <h3 id="heading-spesifikasi">Spesifikasi Teknis Tugas PAW</h3>
+                        <p>Rincian implementasi 5 modul pengembangan yang diterapkan pada repositori ini.</p>
+                    </div>
+                    <ol class="spec-list">
+                        <li class="spec-item">
+                            <h4>1. Aplikasi Web Pengelola Tugas</h4>
+                            <p>Menampilkan daftar tugas kuliah aktif, formulir tambah tugas baru, mode edit tugas yang ada, tombol hapus, serta perubahan status antara <strong>Belum Selesai</strong> dan <strong>Selesai</strong> dalam antarmuka responsif.</p>
+                        </li>
+                        <li class="spec-item">
+                            <h4>2. Manajemen Versi Git dan GitHub</h4>
+                            <p>Repositori terhubung ke <code>riffq1122/paw-personal-web</code> dengan riwayat minimal 5 commit terstruktur, lebih dari 2 branch fitur, proses merge ke branch <code>main</code>, simulasi penyelesaian merge conflict, serta branch khusus untuk Pull Request.</p>
+                        </li>
+                        <li class="spec-item">
+                            <h4>3. Pengelolaan Paket npm dan Vite</h4>
+                            <p>Proyek dibangun memakai bundler Vite dengan pengelolaan paket melalui <code>npm</code>, pemisahan <code>dependencies</code> vs <code>devDependencies</code>, standar semantic versioning, serta script <code>dev</code>, <code>build</code>, dan <code>preview</code> di <code>package.json</code>.</p>
+                        </li>
+                        <li class="spec-item">
+                            <h4>4. Implementasi TypeScript</h4>
+                            <p>Kode sumber <code>src/main.ts</code> menerapkan primitive types (<code>string</code>, <code>number</code>, <code>boolean</code>), array bertipe, <code>interface</code> (<code>TaskItem</code>, <code>AppEnvironmentConfig</code>), <code>type</code> alias dan union type (<code>TaskStatus</code>, <code>TabId</code>, <code>TaskFilter</code>), serta fungsi generics sederhana (<code>readStorage&lt;T&gt;</code>, <code>writeStorage&lt;T&gt;</code>, <code>filterItems&lt;T&gt;</code>).</p>
+                        </li>
+                        <li class="spec-item">
+                            <h4>5. Environment Variables</h4>
+                            <p>Berkas <code>.env</code> menyimpan konfigurasi non-rahasia (<code>VITE_APP_NAME</code>, <code>VITE_APP_VERSION</code>), didokumentasikan pada <code>.env.example</code>, diberi tipe pada <code>src/vite-env.d.ts</code>, dan dilindungi oleh <code>.gitignore</code> agar kredensial tidak terunggah ke GitHub.</p>
+                        </li>
+                    </ol>
+                </section>
+            </section>
+        </div>
+    </main>
+
+    <footer id="kontak" class="site-footer" aria-labelledby="heading-kontak">
+        <div class="section-header">
+            <span class="section-index">04 / KONTAK</span>
+            <h2 id="heading-kontak">Kontak</h2>
+        </div>
+
+        <div class="footer-grid">
+            <div class="footer-intro">
+                <p>Jika Anda ingin menghubungi saya terkait kolaborasi proyek data atau perkuliahan, silakan gunakan saluran resmi berikut:</p>
+            </div>
+
+            <ul class="contact-list">
+                <li>
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:rifqymibra09@gmail.com" class="contact-link">rifqymibra09@gmail.com</a>
+                </li>
+                <li>
+                    <span class="contact-label">Profil Profesional</span>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/rifqy-muhamad-ibrahim-a9b331332/" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn</a>
+                        <a href="https://github.com/rifqymuhamad10" target="_blank" rel="noopener noreferrer" class="contact-link">GitHub</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="footer-colophon">
+            <p>&copy; 2026 Rifqy Muhamad Ibrahim. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

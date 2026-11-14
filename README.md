@@ -44,6 +44,25 @@ Karena browser hanya mengeksekusi JavaScript standar, HTML, dan CSS, proyek ini 
 
 ---
 
+## Environment Variables & Keamanan
+
+Salin `.env.example` menjadi `.env` sebelum menjalankan server lokal:
+
+```dotenv
+VITE_APP_NAME=Portal Tugas Kuliah
+VITE_APP_VERSION=1.0.0
+```
+
+Berkas `.env` telah dicantumkan di `.gitignore` sehingga konfigurasi lokal maupun kunci rahasia tidak ikut terunggah ke GitHub.
+
+## Fitur TypeScript yang Diterapkan
+
+- Primitive types (`string`, `number`, `boolean`)
+- Typed Array (`TaskItem[]`, `readonly string[]`)
+- Interface (`TaskItem`, `AppEnvironmentConfig`)
+- Type alias dan Union type (`ThemeMode`, `TabId`, `TaskStatus`, `TaskFilter`)
+- Generics sederhana (`readStorage<T>`, `writeStorage<T>`, `filterItems<T>`)
+
 ## Menjalankan Proyek
 
 1. Salin templat environment:

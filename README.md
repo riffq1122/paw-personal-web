@@ -8,6 +8,37 @@ Aplikasi web pribadi, tabel jadwal perkuliahan semester 5, dan portal tugas kuli
 2. **02 / Tabel Mata Kuliah**: Menampilkan 8 mata kuliah aktif (total 23 SKS) dengan fitur filter hari (Senin hingga Jumat), pencarian kata kunci, dan tampilan kartu responsif untuk perangkat seluler.
 3. **03 / Portal Tugas Kuliah**: Aplikasi CRUD daftar tugas kuliah (tambah, edit, hapus, serta status Belum Selesai / Selesai), integrasi Environment Variables (`.env` / `.env.example`), dan ringkasan teknis proyek.
 
+## Struktur Folder Kode (`src/`)
+
+Kode sumber TypeScript dipisahkan menjadi beberapa modul berdasarkan tanggung jawab (*separation of concerns*) agar mudah dikelola dan dikembangkan:
+
+```text
+src/
+├── main.ts                         # Entry point aplikasi (bootstrap seluruh modul)
+├── style.css                       # Stylesheet utama Editorial / Swiss-clean
+├── vite-env.d.ts                   # Deklarasi tipe ImportMetaEnv untuk Vite
+├── types/
+│   └── index.ts                    # Definisi tipe & interface TypeScript bersama
+├── config/
+│   └── env.ts                      # Pembacaan VITE_APP_NAME & VITE_APP_VERSION + render banner
+├── data/
+│   └── constants.ts                # Kunci localStorage, daftar tab, 8 mata kuliah, dan data tugas awal
+├── utils/
+│   ├── storage.ts                  # Helper generics localStorage (readStorage<T>, writeStorage<T>)
+│   ├── collection.ts               # Helper generics filter koleksi (filterItems<T>)
+│   └── date.ts                     # Pemformatan tanggal tenggat (formatDeadline)
+└── features/
+    ├── theme/
+    │   └── themeToggle.ts          # Logika sakelar tema Terang/Gelap
+    ├── tabs/
+    │   └── tabs.ts                 # Navigasi ARIA Tabs, keyboard arrows, & sinkronisasi URL hash
+    ├── schedule/
+    │   └── scheduleFilter.ts       # Filter hari, pencarian jadwal, & kalkulasi SKS otomatis
+    └── tasks/
+        ├── taskCard.ts             # Render elemen kartu tugas (toggle status, edit, hapus)
+        └── taskPortal.ts           # Manajemen state CRUD Portal Tugas Kuliah & validasi form
+```
+
 ---
 
 ## Penjelasan Teknologi yang Digunakan di Website Pribadi
@@ -24,7 +55,7 @@ Aplikasi web pribadi, tabel jadwal perkuliahan semester 5, dan portal tugas kuli
 
 ### 3. TypeScript
 - Memberikan pemeriksaan tipe statis (*static type-checking*) sehingga kesalahan tipe data terdeteksi sebelum kode dijalankan di browser.
-- Fitur TypeScript yang diterapkan di `src/main.ts` dan `src/vite-env.d.ts`:
+- Fitur TypeScript yang diterapkan pada modul `src/` (`src/types/index.ts`, `src/utils/`, `src/features/`, dan `src/vite-env.d.ts`):
   - **Primitive types**: `string`, `number`, `boolean`
   - **Typed Array**: `TaskItem[]`, `readonly string[]`
   - **Interface**: `TaskItem`, `AppEnvironmentConfig`, `ImportMetaEnv`

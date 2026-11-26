@@ -69,30 +69,15 @@ Karena browser hanya mengeksekusi JavaScript standar, HTML, dan CSS, proyek ini 
 - **Bundler (Vite + Rollup/Rolldown)**: Menggabungkan seluruh modul JavaScript, CSS, gambar, dan aset dari `src/` serta `public/` menjadi berkas produksi yang ringkas, ter-minifikasi, dan siap deploy di folder `dist/`. Saat mode pengembangan (`npm run dev`), Vite menyajikan modul ES secara instan dengan *Hot Module Replacement* (HMR).
 
 ### 5. Environment Variables
-- Berkas `.env` menyimpan konfigurasi aplikasi publik non-rahasia (`VITE_APP_NAME=Portal Tugas Kuliah` dan `VITE_APP_VERSION=1.0.0`) yang dibaca di sisi klien melalui `import.meta.env`.
+- Berkas `.env` menyimpan konfigurasi aplikasi publik non-rahasia (`VITE_APP_NAME=Portal Tugas Kuliah` dan `VITE_APP_VERSION=1.0.0`) yang dibaca di sisi klien melalui `import.meta.env`:
+  ```dotenv
+  VITE_APP_NAME=Portal Tugas Kuliah
+  VITE_APP_VERSION=1.0.0
+  ```
 - Berkas `.env.example` menyediakan templat nama variabel tanpa nilai sensitif sebagai panduan bagi pengembang lain.
-- Password, token privat, dan API key rahasia **tidak boleh** diberi prefix `VITE_` atau disimpan di `.env` sisi klien maupun diunggah ke GitHub karena seluruh nilai berawalan `VITE_` akan ikut terbawa ke bundle JavaScript produksi.
+- Password, token privat, dan API key rahasia **tidak boleh** diberi prefix `VITE_` atau disimpan di `.env` sisi klien maupun diunggah ke GitHub karena seluruh nilai berawalan `VITE_` akan ikut terbawa ke bundle JavaScript produksi, sementara berkas `.env` telah dikecualikan di `.gitignore`.
 
 ---
-
-## Environment Variables & Keamanan
-
-Salin `.env.example` menjadi `.env` sebelum menjalankan server lokal:
-
-```dotenv
-VITE_APP_NAME=Portal Tugas Kuliah
-VITE_APP_VERSION=1.0.0
-```
-
-Berkas `.env` telah dicantumkan di `.gitignore` sehingga konfigurasi lokal maupun kunci rahasia tidak ikut terunggah ke GitHub.
-
-## Fitur TypeScript yang Diterapkan
-
-- Primitive types (`string`, `number`, `boolean`)
-- Typed Array (`TaskItem[]`, `readonly string[]`)
-- Interface (`TaskItem`, `AppEnvironmentConfig`)
-- Type alias dan Union type (`ThemeMode`, `TabId`, `TaskStatus`, `TaskFilter`)
-- Generics sederhana (`readStorage<T>`, `writeStorage<T>`, `filterItems<T>`)
 
 ## Menjalankan Proyek
 
